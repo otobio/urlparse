@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace url;
 
-function parse(string $url) {
+function parse(string $url)
+{
     $url = trim($url);
     $protocolIndex = strpos($url, "://");
     $guessProtocols = $protocolIndex !== false ? array_filter(explode('+', substr($url, 0, $protocolIndex))) : [''];
@@ -26,7 +27,7 @@ function parse(string $url) {
     $parts = null;
 
     if (strpos($url, '.') === 0) {
-        if (strpos($url,"./") === 0) {
+        if (strpos($url, "./") === 0) {
             $url = substr($url, 2);
         }
 
@@ -46,7 +47,7 @@ function parse(string $url) {
                 $url = substr($url, 2);
                 $output['scheme'] = "file";
             } else {
-                $output['scheme'] = "file";                
+                $output['scheme'] = "file";
             }
         }
     }

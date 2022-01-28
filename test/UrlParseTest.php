@@ -8,7 +8,8 @@ use function url\parse as urlparse;
 
 require 'vendor/autoload.php';
 
-class UrlParseTest extends TestCase {
+class UrlParseTest extends TestCase
+{
     public function testHttpBasedVariousUrls()
     {
         $inputs = [
@@ -109,7 +110,7 @@ class UrlParseTest extends TestCase {
                     'query' => "foo=bar&bar=42",
                     'href' => 'http://user:pass@domain.com/path/name?foo=bar&bar=42#some-hash'
                 ],
-            ],            
+            ],
         ];
 
         foreach ($inputs as $testCase) {
